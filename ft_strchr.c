@@ -1,21 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: samamaev <samamaev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/15 16:19:24 by samamaev          #+#    #+#             */
-/*   Updated: 2025/07/24 17:22:11 by samamaev         ###   ########.fr       */
+/*   Created: 2025/07/22 18:51:01 by samamaev          #+#    #+#             */
+/*   Updated: 2025/08/02 19:40:16 by samamaev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isprint(int c)
+char	*ft_strchr(const char *s, int c)
 {
-	if (c >= 32 && c <= 126)
-		return (1);
-	else
-		return (0);
+	while ((char)c != *s)
+	{
+		if (!*s)
+			return (0);
+		s++;
+	}
+	return ((char *)s);
+}
+#include <stdio.h>
+#include <string.h>
+int	main(void)
+{
+	printf("%p, %p\n", strchr("tripouille", 116 + 258), ft_strchr("tripouille", 116 + 258));
+	return (0);
 }

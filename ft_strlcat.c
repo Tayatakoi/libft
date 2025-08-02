@@ -1,21 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: samamaev <samamaev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/15 16:19:24 by samamaev          #+#    #+#             */
-/*   Updated: 2025/07/24 17:22:11 by samamaev         ###   ########.fr       */
+/*   Created: 2025/07/15 21:35:43 by samamaev          #+#    #+#             */
+/*   Updated: 2025/07/24 22:46:34 by samamaev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isprint(int c)
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	if (c >= 32 && c <= 126)
-		return (1);
+	size_t	i;
+	size_t	ln_src;
+	size_t	ln_dst;
+	size_t	total_len;
+
+	ln_src = ft_strlen(src);
+	ln_dst = ft_strlen(dst);
+	i = 0;
+	total_len = 0;
+	if (dstsize > ln_dst)
+		total_len = ln_dst + ln_src;
 	else
-		return (0);
+		return (ln_src + dstsize);
+	while (src[i] && ln_dst < dstsize -1)
+		dst[ln_dst++] = src[i++];
+	dst[ln_dst] = '\0';
+	return (total_len);
 }

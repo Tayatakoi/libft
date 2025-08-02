@@ -6,16 +6,16 @@
 /*   By: samamaev <samamaev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 15:48:42 by samamaev          #+#    #+#             */
-/*   Updated: 2025/07/16 17:01:45 by samamaev         ###   ########.fr       */
+/*   Updated: 2025/07/24 17:20:38 by samamaev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_isdigit(int c)
+int	ft_isdigit(int c)
 {
-    if (c >= 48 && c <= 57)
-        return (1);
-    else
-        return (0);
+	if (c >= 48 && c <= 57)
+		return (1);
+	else
+		return (0);
 }

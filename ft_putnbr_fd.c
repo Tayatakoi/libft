@@ -1,21 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: samamaev <samamaev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/15 16:19:24 by samamaev          #+#    #+#             */
-/*   Updated: 2025/07/24 17:22:11 by samamaev         ###   ########.fr       */
+/*   Created: 2025/08/01 18:21:30 by samamaev          #+#    #+#             */
+/*   Updated: 2025/08/01 18:39:29 by samamaev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isprint(int c)
+void	ft_putnbr_fd(int n, int fd)
 {
-	if (c >= 32 && c <= 126)
-		return (1);
-	else
-		return (0);
+	long	da;
+
+	da = n;
+	if (da < 0)
+	{
+		ft_putchar_fd('-', fd);
+		da *= -1;
+	}
+	if (da >= 0 && da <= 9)
+		ft_putchar_fd(da + '0', fd);
+	if (da > 9)
+	{
+		ft_putnbr_fd(da / 10, fd);
+		ft_putnbr_fd(da % 10, fd);
+	}
 }

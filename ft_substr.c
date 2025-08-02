@@ -1,21 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: samamaev <samamaev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/15 16:19:24 by samamaev          #+#    #+#             */
-/*   Updated: 2025/07/24 17:22:11 by samamaev         ###   ########.fr       */
+/*   Created: 2025/07/25 18:11:52 by samamaev          #+#    #+#             */
+/*   Updated: 2025/07/28 22:05:03 by samamaev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isprint(int c)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	if (c >= 32 && c <= 126)
-		return (1);
-	else
+	char	*w;
+	size_t	dlina_s;
+
+	if (!s)
 		return (0);
+	dlina_s = ft_strlen(s);
+	if (start >= dlina_s)
+		return (ft_strdup(""));
+	if (len > dlina_s - start)
+		len = dlina_s - start;
+	w = malloc(sizeof(char) * (len + 1));
+	if (!w)
+		return (0);
+	ft_strlcpy(w, s + start, len + 1);
+	return (w);
 }
