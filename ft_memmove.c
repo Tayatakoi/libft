@@ -6,7 +6,7 @@
 /*   By: samamaev <samamaev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 19:53:58 by samamaev          #+#    #+#             */
-/*   Updated: 2025/07/28 19:54:51 by samamaev         ###   ########.fr       */
+/*   Updated: 2025/08/03 21:23:23 by samamaev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
+	if (!dst && !src)
+		return (NULL);
 	unsigned char	*ptr1;
 	unsigned char	*ptr2;
 	size_t			i;

@@ -6,7 +6,7 @@
 #    By: samamaev <samamaev@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/23 22:22:02 by samamaev          #+#    #+#              #
-#    Updated: 2025/08/02 21:23:32 by samamaev         ###   ########.fr        #
+#    Updated: 2025/08/03 18:55:26 by samamaev         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,7 @@ ft_strlcpy.c ft_strnstr.c ft_toupper.c ft_strjoin.c\
 ft_substr.c ft_strdup.c ft_strtrim.c ft_split.c\
 ft_itoa.c ft_putchar_fd.c ft_putendl_fd.c\
 ft_putnbr_fd.c ft_putstr_fd.c ft_striteri.c\
+ft_calloc.c ft_strmapi.c\
 
 CC = cc
 CFLAGS = -Wall -Wextra -Werror -g
