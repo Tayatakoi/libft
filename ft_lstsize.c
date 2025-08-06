@@ -1,29 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: samamaev <samamaev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/01 17:41:57 by samamaev          #+#    #+#             */
-/*   Updated: 2025/08/04 17:32:10 by samamaev         ###   ########.fr       */
+/*   Created: 2025/08/04 21:45:06 by samamaev          #+#    #+#             */
+/*   Updated: 2025/08/05 20:32:50 by samamaev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putchar_fd(char c, int fd)
+int	ft_lstsize(t_list *lst)
 {
-	write(fd, &c, 1);
-}
-//#include <fcntl.h>
-// int main()
-// {
-// 	int fd;
+	char	len;
 
-// 	fd = open("putchar" ,O_WRONLY | O_CREAT | O_TRUNC, 0644);
-// 	if (fd == -1)
-// 		return (1);
-// 	ft_putchar_fd('H', fd);
-// 	return (0);
-// }
+	len = 0;
+	while (lst)
+	{
+		len++;
+		lst = lst -> next;
+	}
+	return (len);
+}

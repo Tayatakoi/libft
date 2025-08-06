@@ -1,29 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: samamaev <samamaev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/01 17:41:57 by samamaev          #+#    #+#             */
-/*   Updated: 2025/08/04 17:32:10 by samamaev         ###   ########.fr       */
+/*   Created: 2025/08/05 22:24:11 by samamaev          #+#    #+#             */
+/*   Updated: 2025/08/06 14:01:14 by samamaev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putchar_fd(char c, int fd)
+void	ft_lstdelone(t_list *lst, void (*del)(void*))
 {
-	write(fd, &c, 1);
+	if (!lst || !del)
+		return ;
+	del(lst -> content);
+	free (lst);
 }
-//#include <fcntl.h>
-// int main()
-// {
-// 	int fd;
-
-// 	fd = open("putchar" ,O_WRONLY | O_CREAT | O_TRUNC, 0644);
-// 	if (fd == -1)
-// 		return (1);
-// 	ft_putchar_fd('H', fd);
-// 	return (0);
-// }

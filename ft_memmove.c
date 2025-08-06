@@ -6,7 +6,7 @@
 /*   By: samamaev <samamaev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 19:53:58 by samamaev          #+#    #+#             */
-/*   Updated: 2025/08/03 21:23:23 by samamaev         ###   ########.fr       */
+/*   Updated: 2025/08/04 15:59:29 by samamaev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,30 +14,26 @@
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	if (!dst && !src)
-		return (NULL);
-	unsigned char	*ptr1;
-	unsigned char	*ptr2;
+	unsigned char	*d;
+	unsigned char	*s;
 	size_t			i;
 
-	ptr1 = (unsigned char *)dst;
-	ptr2 = (unsigned char *)src;
+	if (!dst && !src)
+		return (NULL);
+	d = (unsigned char *)dst;
+	s = (unsigned char *)src;
 	i = 0;
-	if (len > 0)
+	if (d < s)
 	{
-		while (i < len)
-		{
-			if (ptr1 > ptr2)
-			{
-				ptr1[len - 1 - i] = ptr2[len - 1 - i];
-				i++;
-			}
-			else
-			{
-				ptr1[i] = ptr2[i];
-				i++;
-			}
-		}
+		while (len--)
+			*d++ = *s++;
+	}
+	else if (d > s)
+	{
+		d += len;
+		s += len;
+		while (len--)
+			*(--d) = *(--s);
 	}
 	return (dst);
 }

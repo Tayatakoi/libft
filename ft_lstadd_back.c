@@ -1,29 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: samamaev <samamaev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/01 17:41:57 by samamaev          #+#    #+#             */
-/*   Updated: 2025/08/04 17:32:10 by samamaev         ###   ########.fr       */
+/*   Created: 2025/08/05 18:13:57 by samamaev          #+#    #+#             */
+/*   Updated: 2025/08/05 20:32:24 by samamaev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putchar_fd(char c, int fd)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	write(fd, &c, 1);
-}
-//#include <fcntl.h>
-// int main()
-// {
-// 	int fd;
+	t_list	*temp;
 
-// 	fd = open("putchar" ,O_WRONLY | O_CREAT | O_TRUNC, 0644);
-// 	if (fd == -1)
-// 		return (1);
-// 	ft_putchar_fd('H', fd);
-// 	return (0);
-// }
+	temp = *lst;
+	if (!lst || !new)
+		return ;
+	if (*lst == NULL)
+	{
+		new -> next = *lst;
+		*lst = new;
+		return ;
+	}
+	while (temp -> next != NULL)
+		temp = temp -> next;
+	temp -> next = new;
+}

@@ -6,7 +6,7 @@
 /*   By: samamaev <samamaev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/01 18:14:56 by samamaev          #+#    #+#             */
-/*   Updated: 2025/08/02 23:34:19 by samamaev         ###   ########.fr       */
+/*   Updated: 2025/08/06 15:42:08 by samamaev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
 	int	i;
 
-	if (!s)
+	if (!s || !f)
 		return ;
 	i = 0;
 	while (s[i])

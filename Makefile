@@ -6,7 +6,7 @@
 #    By: samamaev <samamaev@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/23 22:22:02 by samamaev          #+#    #+#              #
-#    Updated: 2025/08/03 18:55:26 by samamaev         ###   ########.fr        #
+#    Updated: 2025/08/06 17:47:15 by samamaev         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,14 +21,18 @@ ft_strlcpy.c ft_strnstr.c ft_toupper.c ft_strjoin.c\
 ft_substr.c ft_strdup.c ft_strtrim.c ft_split.c\
 ft_itoa.c ft_putchar_fd.c ft_putendl_fd.c\
 ft_putnbr_fd.c ft_putstr_fd.c ft_striteri.c\
-ft_calloc.c ft_strmapi.c\
+ft_calloc.c ft_strmapi.c ft_lstdelone.c\
+
+BONUS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c\
+ft_lstlast.c ft_lstadd_back.c ft_lstclear.c\
+ft_lstiter.c ft_lstmap.c
 
 CC = cc
 CFLAGS = -Wall -Wextra -Werror -g
 AR = ar rcs
 
 OBJ_FILES_MANDATORY = $(MANDATORY:.c=.o)
-# OBJ_FILES_BONUS = $(BONUS:.c=.o)
+OBJ_FILES_BONUS = $(BONUS:.c=.o)
 
 all: $(NAME)
 
@@ -38,8 +42,8 @@ $(NAME): $(OBJ_FILES_MANDATORY)
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
-# bonus: $(OBJ_FILES_BONUS) $(OBJ_FILES_MANDATORY)
-# 	$(AR) $(NAME) $^
+bonus: $(OBJ_FILES_BONUS) $(OBJ_FILES_MANDATORY)
+	$(AR) $(NAME) $^
 
 clean:
 	rm -f $(OBJ_FILES_MANDATORY)

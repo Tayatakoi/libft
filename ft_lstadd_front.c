@@ -1,29 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: samamaev <samamaev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/01 17:41:57 by samamaev          #+#    #+#             */
-/*   Updated: 2025/08/04 17:32:10 by samamaev         ###   ########.fr       */
+/*   Created: 2025/08/04 21:01:30 by samamaev          #+#    #+#             */
+/*   Updated: 2025/08/04 21:16:07 by samamaev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putchar_fd(char c, int fd)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	write(fd, &c, 1);
+	if (!lst || !new)
+		return ;
+	new -> next = *lst;
+	*lst = new;
 }
-//#include <fcntl.h>
-// int main()
-// {
-// 	int fd;
-
-// 	fd = open("putchar" ,O_WRONLY | O_CREAT | O_TRUNC, 0644);
-// 	if (fd == -1)
-// 		return (1);
-// 	ft_putchar_fd('H', fd);
-// 	return (0);
-// }

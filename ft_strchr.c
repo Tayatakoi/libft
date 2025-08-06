@@ -6,7 +6,7 @@
 /*   By: samamaev <samamaev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 18:51:01 by samamaev          #+#    #+#             */
-/*   Updated: 2025/08/03 18:50:00 by samamaev         ###   ########.fr       */
+/*   Updated: 2025/08/06 14:21:49 by samamaev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	while ((char)c != *s)
+	while ((unsigned char)c != *s)
 	{
 		if (!*s)
 			return (0);
@@ -22,3 +22,9 @@ char	*ft_strchr(const char *s, int c)
 	}
 	return ((char *)s);
 }
+// #include <stdio.h>
+// int main(void)
+// {
+// 	printf("%s", ft_strchr("abcde", 100));
+// 	return (0);
+// }

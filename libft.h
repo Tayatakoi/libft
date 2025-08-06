@@ -6,7 +6,7 @@
 /*   By: samamaev <samamaev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/24 20:26:16 by samamaev          #+#    #+#             */
-/*   Updated: 2025/08/03 19:25:40 by samamaev         ###   ########.fr       */
+/*   Updated: 2025/08/06 17:47:08 by samamaev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <limits.h>
-# include <string.h>
 
 int		ft_isalpha(int c);
 int		ft_isalnum(int c);
@@ -53,5 +52,19 @@ char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_itoa(int n);
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}	t_list;
+t_list	*ft_lstnew(void *content);
+t_list	*ft_lstlast(t_list *lst);
+void	ft_lstadd_front(t_list **lst, t_list *new);
+void	ft_lstadd_back(t_list **lst, t_list *new);
+void	ft_lstdelone(t_list *lst, void (*del)(void*));
+void	ft_lstclear(t_list **lst, void (*del)(void*));
+void	ft_lstiter(t_list *lst, void (*f)(void *));
+int		ft_lstsize(t_list *lst);
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
 #endif
