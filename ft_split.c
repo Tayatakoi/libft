@@ -6,7 +6,7 @@
 /*   By: samamaev <samamaev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/28 22:44:28 by samamaev          #+#    #+#             */
-/*   Updated: 2025/08/04 19:02:30 by samamaev         ###   ########.fr       */
+/*   Updated: 2025/08/09 16:46:16 by samamaev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,16 +41,10 @@ static int	len_of_substring(char const *s, char c)
 	return (i);
 }
 
-static void	chistka(char **result)
+static void	chistka(char **result, int n)
 {
-	int	i;
-
-	i = 0;
-	while (result[i])
-	{
-		free(result[i]);
-		i++;
-	}
+	while (n--)
+		free(result[n]);
 	free(result);
 }
 
@@ -60,21 +54,20 @@ char	**ft_split(char const *s, char c)
 	int		slova;
 	int		i;
 
+	if (!s)
+		return (NULL);
 	slova = count_substrings(s, c);
 	result = malloc(sizeof(char *) * (slova + 1));
-	i = 0;
 	if (!result)
 		return (0);
-	while (*s && i < slova)
+	i = 0;
+	while (i < slova)
 	{
 		while (*s == c)
 			s++;
 		result[i] = ft_substr(s, 0, len_of_substring(s, c));
 		if (!result[i])
-		{
-			chistka(result);
-			return (NULL);
-		}
+			return (chistka(result, i), NULL);
 		s += len_of_substring(s, c);
 		i++;
 	}
