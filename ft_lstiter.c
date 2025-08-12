@@ -22,3 +22,17 @@ void	ft_lstiter(t_list *lst, void (*f)(void *))
 		lst = lst -> next;
 	}
 }
+// #include <stdio.h>
+// void print_content(void *content)
+// {
+//     printf("%s\n", (char *)content);
+// }
+// int main (void)
+// {
+// 	t_list *head = NULL;
+// 	t_list *node1 = ft_lstnew(ft_strdup("1"));
+// 	t_list *node2 = ft_lstnew(ft_strdup("2"));
+//  	ft_lstadd_back(&head, node1);
+// 	ft_lstadd_back(&head, node2);
+// 	ft_lstiter(head, print_content);
+// }
