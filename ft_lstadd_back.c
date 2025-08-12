@@ -29,3 +29,17 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 		temp = temp -> next;
 	temp -> next = new;
 }
+// #include <stdio.h>
+// int main(void)
+// {
+// 	t_list *head = NULL;
+// 	t_list *node1 = ft_lstnew(ft_strdup("1"));
+// 	t_list *node2 = ft_lstnew(ft_strdup("2"));
+// 	ft_lstadd_front(&head, node1);
+// 	ft_lstadd_front(&head, node2);
+//     while (head)
+//     {
+//         printf("%s\n", (char *)head->content);
+//         head = head->next;
+//     }
+// }
