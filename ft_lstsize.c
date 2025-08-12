@@ -24,3 +24,14 @@ int	ft_lstsize(t_list *lst)
 	}
 	return (len);
 }
+// #include <stdio.h>
+// int main(void)
+// {
+// 	t_list *node1 = ft_lstnew(ft_strdup("1"));
+// 	t_list *node2 = ft_lstnew(ft_strdup("2"));
+// 	t_list *node3 = ft_lstnew(ft_strdup("3"));
+// 	ft_lstadd_back(&node1, node2);
+// 	ft_lstadd_back(&node1, node3);
+// 	printf("%d\n",ft_lstsize(node1));
+// 	return (0);
+// }
