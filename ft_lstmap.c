@@ -38,3 +38,27 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	}
 	return (header);
 }
+
+#include <stdio.h>
+
+void *dup_content(void *content)
+{
+    return (ft_strdup((char *)content));
+}
+// int main(void)
+// {
+// 	t_list *head = ft_lstnew(ft_strdup("000"));
+// 	t_list *node1 = ft_lstnew(ft_strdup("111"));
+// 	t_list *node2 = ft_lstnew(ft_strdup("222"));
+// 	ft_lstadd_back(&head, node1);
+// 	ft_lstadd_back(&head, node2);
+// 	t_list *new_lst = (ft_lstmap(head, dup_content, free));
+// 	t_list *temp = new_lst;
+// 	while(temp)
+// 	{
+// 		printf("%s\n", (char *)temp->content);
+// 		temp = temp ->next;
+// 	}
+// 	ft_lstclear(&head, free);
+// 	ft_lstclear(&new_lst, free);
+// }
