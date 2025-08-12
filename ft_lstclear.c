@@ -26,3 +26,18 @@ void	ft_lstclear(t_list **lst, void (*del)(void*))
 	}
 	*lst = NULL;
 }
+// #include <stdio.h>
+// int main(void)
+// {
+// 	t_list *head = ft_lstnew(ft_strdup("5\n"));
+// 	t_list *node1 = ft_lstnew(ft_strdup("55"));
+// 	t_list *node2 = ft_lstnew(ft_strdup("555"));
+// 	ft_lstadd_front(&head, node1);
+// 	ft_lstadd_front(&head, node2);
+// 	ft_lstclear(&head, free);
+// 	if (!head)
+// 	printf("List is empty\n");
+//     else
+//         printf("List still has nodes\n");
+// 	return (0);
+// }
