@@ -23,3 +23,15 @@ t_list	*ft_lstnew(void *content)
 	uzel -> next = NULL;
 	return (uzel);
 }
+// #include <stdio.h>
+// int main(void)
+// {
+//     int num = 42;
+//     t_list *node = ft_lstnew(&num);
+//     if (!node)
+//         return 1;
+//     // Example usage: print content as int
+//     printf("%d\n", *(int *)(node->content));
+//     free(node);
+//     return 0;
+// }
