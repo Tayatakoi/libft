@@ -24,3 +24,16 @@ t_list	*ft_lstlast(t_list *lst)
 	}
 	return (NULL);
 }
+// #include <stdio.h>
+// int main(void)
+// {
+//  	t_list *head = NULL;
+// 	t_list *node1 = ft_lstnew(ft_strdup("1"));
+// 	t_list *node2 = ft_lstnew(ft_strdup("2"));
+// 	t_list *node3 = ft_lstnew(ft_strdup("3"));
+// 	ft_lstadd_back(&head, node1);
+// 	ft_lstadd_back(&head, node2);
+// 	ft_lstadd_back(&head, node3);
+// 	t_list *last = ft_lstlast(head);
+//     printf("%s\n", (char *)last->content);
+// }
